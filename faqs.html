@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoHaz | FAQs</title>
+  <link rel="icon" href="brand_asset/EcoHaz_mask-removebg-preview.png" type="image/png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+      --orange: #F47920; --orange-dark: #D4630F; --orange-light: #F9A05A;
+      --navy: #1E3058; --navy-mid: #2D4A82; --navy-dark: #0F1D36;
+      --sky: #7DC8E3; --sky-light: #B3DFF0; --slate: #637B8D; --off-white: #F6F4F0;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; color: #1E3058; overflow-x: hidden; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; }
+    .nav-link { position:relative; font-family:'Montserrat',sans-serif; font-weight:700; font-size:0.8rem; letter-spacing:0.08em; text-transform:uppercase; color:rgba(255,255,255,0.85); text-decoration:none; padding:0.25rem 0; transition:color 0.2s ease; }
+    .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:var(--orange); transition:width 0.25s ease; }
+    .nav-link:hover { color:#fff; }
+    .nav-link:hover::after { width:100%; }
+    .nav-link.active { color:var(--orange); }
+    .nav-link.active::after { width:100%; }
+    .btn-orange { display:inline-flex; align-items:center; gap:0.5rem; background:var(--orange); color:white; font-family:'Montserrat',sans-serif; font-weight:800; font-size:0.8rem; letter-spacing:0.08em; text-transform:uppercase; padding:0.75rem 1.5rem; border-radius:3px; text-decoration:none; border:none; cursor:pointer; box-shadow:0 4px 20px rgba(244,121,32,0.3); transition:background 0.2s ease, transform 0.15s cubic-bezier(0.34,1.56,0.64,1); }
+    .btn-orange:hover { background:var(--orange-dark); transform:translateY(-2px); }
+    .btn-outline-white { display:inline-flex; align-items:center; gap:0.5rem; background:transparent; color:white; font-family:'Montserrat',sans-serif; font-weight:800; font-size:0.8rem; letter-spacing:0.08em; text-transform:uppercase; padding:0.75rem 1.5rem; border-radius:3px; text-decoration:none; border:2px solid rgba(255,255,255,0.6); cursor:pointer; transition:background 0.2s ease, color 0.2s ease; }
+    .btn-outline-white:hover { background:white; color:var(--navy-dark); border-color:white; }
+    .btn-navy { display:inline-flex; align-items:center; gap:0.5rem; background:var(--navy-dark); color:white; font-family:'Montserrat',sans-serif; font-weight:800; font-size:0.8rem; letter-spacing:0.08em; text-transform:uppercase; padding:0.75rem 1.5rem; border-radius:3px; text-decoration:none; border:none; cursor:pointer; transition:background 0.2s ease, transform 0.15s ease; }
+    .btn-navy:hover { background:var(--navy); transform:translateY(-2px); }
+    .section-label { font-family:'Montserrat',sans-serif; font-weight:800; font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--orange); }
+    .orange-divider { width:50px; height:4px; background:var(--orange); border-radius:2px; margin:0.75rem 0 1.25rem; }
+    .mobile-menu-panel { display:none; }
+    .mobile-menu-panel.open { display:block; }
+    .grain-overlay { position:relative; }
+    .grain-overlay::before { content:''; position:absolute; inset:0; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events:none; z-index:1; }
+    /* Accordion */
+    .accordion-item { background:white; border-radius:4px; margin-bottom:0.75rem; box-shadow:0 2px 8px rgba(15,29,54,0.06); overflow:hidden; }
+    .accordion-btn { width:100%; background:none; border:none; padding:1.4rem 1.75rem; display:flex; align-items:center; justify-content:space-between; cursor:pointer; text-align:left; gap:1rem; transition:background 0.2s ease; }
+    .accordion-btn:hover { background:rgba(244,121,32,0.04); }
+    .accordion-btn:focus-visible { outline:2px solid var(--orange); outline-offset:-2px; }
+    .accordion-question { font-family:'Montserrat',sans-serif; font-weight:700; font-size:0.975rem; color:var(--navy-dark); line-height:1.4; }
+    .accordion-icon { width:28px; height:28px; background:rgba(244,121,32,0.1); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--orange); flex-shrink:0; font-size:0.8rem; transition:transform 0.3s ease, background 0.2s ease; }
+    .accordion-btn.open .accordion-icon { transform:rotate(45deg); background:var(--orange); color:white; }
+    .accordion-body { max-height:0; overflow:hidden; transition:max-height 0.35s ease; }
+    .accordion-body.open { max-height:500px; }
+    .accordion-content { padding:0 1.75rem 1.5rem; color:var(--slate); line-height:1.75; font-size:0.95rem; }
+    .faq-category { font-family:'Montserrat',sans-serif; font-weight:800; font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--orange); margin:2.5rem 0 1rem; }
+    .faq-category:first-child { margin-top:0; }
+  </style>
+</head>
+<body>
+
+  <!-- UTILITY BAR -->
+  <div style="background:var(--orange);">
+    <div style="max-width:1280px; margin:0 auto; padding:0.5rem 1.5rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem;">
+      <div style="display:flex; align-items:center; gap:1.5rem; color:white; font-size:0.8rem; font-family:'Montserrat',sans-serif; font-weight:600;">
+        <a href="tel:+27712345678" style="color:white; text-decoration:none; display:flex; align-items:center; gap:0.4rem;"><i class="fas fa-phone"></i> 071 234 5678</a>
+        <a href="mailto:hello@ecohaz.co.za" style="color:white; text-decoration:none; display:flex; align-items:center; gap:0.4rem;"><i class="fas fa-envelope"></i> hello@ecohaz.co.za</a>
+        <span style="display:flex; align-items:center; gap:0.4rem;"><i class="fas fa-map-marker-alt"></i> Cape Town, Western Cape</span>
+      </div>
+      <div style="color:white; font-size:0.8rem; font-family:'Montserrat',sans-serif; font-weight:600; display:flex; align-items:center; gap:0.4rem;"><i class="fas fa-clock"></i> Available 24/7 &bull; 365 Days a Year</div>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav style="background:var(--navy-dark); position:sticky; top:0; z-index:50; box-shadow:0 2px 24px rgba(0,0,0,0.3);">
+    <div style="max-width:1280px; margin:0 auto; padding:0 1.5rem; display:flex; align-items:center; justify-content:space-between; height:76px;">
+      <a href="index.html" style="display:flex; align-items:center; flex-shrink:0;"><img src="brand_asset/EcoHaz-removebg-preview.png" alt="EcoHaz" style="height:56px; width:auto;" /></a>
+      <div id="desktop-nav" style="display:flex; align-items:center; gap:2.25rem;">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="locations.html" class="nav-link">Locations</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+      <a href="https://wa.me/27712345678" target="_blank" class="btn-orange" style="font-size:0.78rem;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <button id="menu-btn" onclick="toggleMenu()" style="display:none; background:none; border:none; color:white; font-size:1.5rem; cursor:pointer; padding:0.5rem;"><i class="fas fa-bars" id="menu-icon"></i></button>
+    </div>
+    <div id="mobile-menu" class="mobile-menu-panel" style="background:var(--navy); border-top:1px solid rgba(255,255,255,0.1);">
+      <div style="max-width:1280px; margin:0 auto; padding:1rem 1.5rem; display:flex; flex-direction:column; gap:1rem;">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="locations.html" class="nav-link">Locations</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="tel:0712345678" class="btn-orange" style="justify-content:center; margin-top:0.5rem;"><i class="fas fa-phone"></i> 071 234 5678</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="grain-overlay" style="background:linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%); padding:5rem 1.5rem; text-align:center; position:relative;">
+    <div style="position:relative; z-index:2;">
+      <span class="section-label" style="color:var(--sky);">Questions &amp; Answers</span>
+      <div class="orange-divider" style="margin:0.75rem auto 1.25rem;"></div>
+      <h1 style="font-size:clamp(2.5rem,5vw,4rem); font-weight:900; color:white; letter-spacing:-0.03em; margin:0.75rem 0 1rem; text-transform:uppercase;">Frequently Asked Questions</h1>
+      <p style="max-width:560px; margin:0 auto; color:rgba(255,255,255,0.7); font-size:1.05rem; line-height:1.75;">Everything you need to know. If you have other enquiries, please call or email us.</p>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section style="padding:6rem 1.5rem; background:var(--off-white);">
+    <div style="max-width:860px; margin:0 auto;">
+
+      <!-- GENERAL -->
+      <div class="faq-category">General Questions</div>
+
+      <div class="accordion-item">
+        <button class="accordion-btn" onclick="toggleAccordion(this)">
+          <span class="accordion-question">What is EcoHaz and what do you do?</span>
+          <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-content">EcoHaz is a professional extreme cleaning company based in Cape Town, Western Cape. We specialise in hoarding cleanup and extreme deep cleaning for residential and commercial clients. We operate with compassion, discretion, and professionalism, helping people restore their homes and environments. We are also expanding into biohazardous and trauma cleanup services in the near future.</div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-btn" onclick="toggleAccordion(this)">
+          <span class="accordion-question">Is everything confidential?</span>
+          <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-content">Absolutely. Confidentiality is one of our most important commitments. We never share client details, and our team operates with discretion. What happens on site, stays on site. If we do post on social media, we would only do so with your explicit permission.</div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-btn" onclick="toggleAccordion(this)">
+          <span class="accordion-question">Will you judge me or my situation?</span>
+          <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-content">Never. Our entire approach is built on compassion and understanding. The World Health Organisation recognises hoarding as a disorder, and we treat it with the same respect and sensitivity as any other health condition. We understand that it is difficult, and we are here to help you move past it. It is not our place to judge. We're just here to help.</div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-btn" onclick="toggleAccordion(this)">
+          <span class="accordion-question">What areas do you service in Cape Town?</span>
+          <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-content">We are based in Cape Town, Western Cape, and we service all major suburbs across the city, including the Northern Suburbs (Bellville, Durbanville, Brackenfell, etc.), Southern Suburbs (Rondebosch, Constantia, Claremont, etc.), Atlantic Seaboard (Sea Point, Camps Bay, Green Point, etc.), and the False Bay Coast (Muizenberg, Fish Hoek, Simon's Town, etc.). If you're unsure whether we cover your area, just call us and we'll confirm. <a href="locations.html" style="color:var(--orange); font-weight:700;">View all service areas here.</a></div>
+        </div>
+      </div>
+
+      <!-- HOARDING -->
+      <div class="faq-category">Hoarding Cleanup</div>
+
+      <div class="accordion-item">
+        <button class="accordion-btn" onclick="toggleAccordion(this)">
+          <span class="accordion-question">What happens during a hoarding cleanup?</span>
+          <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-content">We begin with a quotation and consultation to understand your situation, your needs, and what outcome you're hoping for. During the cleanup itself, our team will sort and categorise items, pack and remove what needs to go, organise what stays, handle waste disposal responsibly, and then deep clean the space. We work entirely at your pace, nothing is discarded without your consent, and you're in control throughout the whole process.</div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-btn" onclick="toggleAccordion(this)">
+          <span class="accordion-question">Do I need to be present during the cleanup?</span>
+          <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-content">It's entirely up to you. Some clients prefer to be present throughout; others find it emotionally easier to step away for parts of the process. We'll discuss this during our initial consultation and find an arrangement that works best for you. Your comfort is our priority.</div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-btn" onclick="toggleAccordion(this)">
+          <span class="accordion-question">Will you throw away my belongings without asking?</span>
+          <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-content">Absolutely not. Nothing is disposed of without your explicit consent. We sort and present items to you, making it as easy as possible to decide what stays, what goes to charity, what gets recycled, and what gets disposed of. This is your home and your belongings, we are here to assist you, not make decisions for you.</div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-btn" onclick="toggleAccordion(this)">
+          <span class="accordion-question">How long does a hoarding cleanup take?</span>
+          <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-content">Every situation is different, so it's difficult to give a standard timeframe without assessing your specific situation first. A small apartment may take 2 or 3 days. It also depends on the level of hoard. We'll give you a realistic estimate after an initial consultation or walk-through.</div>
+        </div>
+      </div>
+
+      <!-- DEEP CLEANING -->
+      <div class="faq-category">Deep Cleaning &amp; Other Services</div>
+
+      <div class="accordion-item">
+        <button class="accordion-btn" onclick="toggleAccordion(this)">
+          <span class="accordion-question">What deep cleaning services do you offer?</span>
+          <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-content">We offer post-construction cleanup, estate clearing and cleanouts, commercial deep cleaning, and residential deep cleaning. We use hospital-grade, eco-friendly products and trained staff. Whether it's a newly built property, a property being sold, or a commercial space that needs a thorough clean, we can help.</div>
+        </div>
+      </div>
+
+
+      <div class="accordion-item">
+        <button class="accordion-btn" onclick="toggleAccordion(this)">
+          <span class="accordion-question">Do you offer commercial cleaning services?</span>
+          <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-content">Yes, we work with commercial clients as well as residential clients. Whether it's an office, a retail space, a rental property, or a post-construction commercial site, we can provide a tailored deep cleaning solution. Contact us to discuss your specific needs.</div>
+        </div>
+      </div>
+
+      <!-- BOOKING & PRICING -->
+      <div class="faq-category">Booking &amp; Pricing</div>
+
+      <div class="accordion-item">
+        <button class="accordion-btn" onclick="toggleAccordion(this)">
+          <span class="accordion-question">How do I get a quote?</span>
+          <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-content">Simply call us on <a href="tel:0712345678" style="color:var(--orange); font-weight:700;">071 234 5678</a> or fill in the contact form on our <a href="contact.html" style="color:var(--orange); font-weight:700;">Contact page</a>. We do require an in-person consultation and walk-through before providing a quotation. This allows us to determine the level of hoard, assess exactly what your needs are, and give you an accurate quotation.</div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-btn" onclick="toggleAccordion(this)">
+          <span class="accordion-question">Are you available on weekends and public holidays?</span>
+          <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-content">Yes, we are available. We know that for many people, discretion and privacy may be easier to arrange on certain days. We will work around your schedule.</div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-btn" onclick="toggleAccordion(this)">
+          <span class="accordion-question">Do you offer emergency or same-day services?</span>
+          <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-content">We do our best to accommodate all requests. But especially with hoarding, we need to do a consultation and walk-through first. We then put together a quotation and in some cases, certain requirements are necessary, which may take a day or two. Please call us directly though, so that we can see how quickly we are able to assist.</div>
+        </div>
+      </div>
+
+      <!-- FUTURE SERVICES -->
+      <div class="faq-category">Future Services</div>
+
+      <div class="accordion-item">
+        <button class="accordion-btn" onclick="toggleAccordion(this)">
+          <span class="accordion-question">Do you currently do crime scene or biohazard cleanup?</span>
+          <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-content">Not yet, but it's where we are headed. We are actively preparing to expand into biohazardous and trauma cleanup services, including crime scene cleanup, suicide and unattended death cleanup, decontamination, and more. These services require specialised training and equipment, and we are committed to offering them with the same compassion and professionalism as everything else we do. Watch this space, or <a href="contact.html" style="color:var(--orange); font-weight:700;">contact us</a> to be notified when these services launch.</div>
+        </div>
+      </div>
+
+      <!-- Still have questions CTA -->
+      <div style="background:white; border-radius:4px; padding:2rem; margin-top:2.5rem; text-align:center; box-shadow:0 2px 12px rgba(15,29,54,0.07); border:2px solid rgba(244,121,32,0.2);">
+        <i class="fas fa-question-circle" style="color:var(--orange); font-size:2rem; margin-bottom:0.75rem;"></i>
+        <h3 style="font-family:'Montserrat',sans-serif; font-weight:800; color:var(--navy-dark); margin-bottom:0.5rem;">Still have questions?</h3>
+        <p style="color:var(--slate); font-size:0.95rem; margin-bottom:1.5rem;">We're happy to chat, no pressure, no obligation, just a friendly conversation.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:1rem; justify-content:center;">
+          <a href="tel:0712345678" class="btn-orange"><i class="fas fa-phone"></i> Call Us</a>
+          <a href="contact.html" class="btn-navy">Send a Message <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <section class="grain-overlay" style="background:var(--orange); padding:5rem 1.5rem; position:relative; text-align:center;">
+    <div style="max-width:800px; margin:0 auto; position:relative; z-index:2;">
+      <h2 style="font-size:clamp(2rem,5vw,3.5rem); font-weight:900; color:white; letter-spacing:-0.03em; line-height:1.1; margin-bottom:1rem; text-transform:uppercase;">We Are Ready to Help</h2>
+      <p style="color:rgba(255,255,255,0.9); font-size:1.1rem; line-height:1.75; margin-bottom:2.5rem;">We're available 24/7, 365 days a year. Call or WhatsApp us to arrange for a quote.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:1rem; justify-content:center;">
+        <a href="tel:0712345678" class="btn-navy" style="font-size:1rem; padding:1.1rem 2.5rem;"><i class="fas fa-phone"></i> 071 234 5678</a>
+        <a href="contact.html" class="btn-outline-white" style="font-size:1rem; padding:1.1rem 2.5rem;">Contact Us <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:var(--navy-dark); color:white; padding:4rem 1.5rem 0;">
+    <div style="max-width:1280px; margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr 1.5fr; gap:3rem; padding-bottom:3rem; border-bottom:1px solid rgba(255,255,255,0.1);">
+      <div>
+        <img src="brand_asset/EcoHaz-removebg-preview.png" alt="EcoHaz" style="height:64px; margin-bottom:1rem;" />
+        <p style="color:rgba(255,255,255,0.6); font-size:0.9rem; line-height:1.75; max-width:280px; margin-bottom:1.5rem;">Western Cape's compassionate extreme cleaning specialists. We restore homes and environments, with kindness and understanding.</p>
+        <div style="font-style:italic; color:var(--orange); font-family:'Montserrat',sans-serif; font-weight:700; font-size:0.9rem;">"We Clean with Compassion… and Precision"</div>
+      </div>
+      <div>
+        <h4 style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; color:white; margin-bottom:1.25rem;">Quick Links</h4>
+        <div style="display:flex; flex-direction:column; gap:0.6rem;">
+          <a href="index.html" style="color:rgba(255,255,255,0.6); text-decoration:none; font-size:0.9rem;" onmouseover="this.style.color='var(--orange)'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">Home</a>
+          <a href="about.html" style="color:rgba(255,255,255,0.6); text-decoration:none; font-size:0.9rem;" onmouseover="this.style.color='var(--orange)'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">About Us</a>
+          <a href="services.html" style="color:rgba(255,255,255,0.6); text-decoration:none; font-size:0.9rem;" onmouseover="this.style.color='var(--orange)'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">Services</a>
+          <a href="locations.html" style="color:rgba(255,255,255,0.6); text-decoration:none; font-size:0.9rem;" onmouseover="this.style.color='var(--orange)'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">Locations</a>
+          <a href="contact.html" style="color:rgba(255,255,255,0.6); text-decoration:none; font-size:0.9rem;" onmouseover="this.style.color='var(--orange)'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">Contact</a>
+          <a href="faqs.html" style="color:var(--orange); text-decoration:none; font-size:0.9rem; font-weight:600;">FAQs</a>
+        </div>
+      </div>
+      <div>
+        <h4 style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; color:white; margin-bottom:1.25rem;">Our Services</h4>
+        <div style="display:flex; flex-direction:column; gap:0.6rem;">
+          <a href="services.html" style="color:rgba(255,255,255,0.6); text-decoration:none; font-size:0.9rem;" onmouseover="this.style.color='var(--orange)'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">Hoarding Cleanup</a>
+          <a href="services.html" style="color:rgba(255,255,255,0.6); text-decoration:none; font-size:0.9rem;" onmouseover="this.style.color='var(--orange)'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">Extreme Deep Cleaning</a>
+          <a href="services.html" style="color:rgba(255,255,255,0.6); text-decoration:none; font-size:0.9rem;" onmouseover="this.style.color='var(--orange)'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">Estate Clearing</a>
+          <a href="services.html" style="color:rgba(255,255,255,0.6); text-decoration:none; font-size:0.9rem;" onmouseover="this.style.color='var(--orange)'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">Commercial Cleaning</a>
+          <a href="services.html" style="color:rgba(255,255,255,0.6); text-decoration:none; font-size:0.9rem;" onmouseover="this.style.color='var(--orange)'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">Biohazardous (Coming Soon)</a>
+        </div>
+      </div>
+      <div>
+        <h4 style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; color:white; margin-bottom:1.25rem;">Contact Us</h4>
+        <div style="display:flex; flex-direction:column; gap:0.9rem;">
+          <a href="tel:0712345678" style="color:rgba(255,255,255,0.6); text-decoration:none; font-size:0.9rem; display:flex; align-items:flex-start; gap:0.6rem;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.6)'"><i class="fas fa-phone" style="color:var(--orange); margin-top:0.15rem; flex-shrink:0;"></i>071 234 5678</a>
+          <a href="mailto:hello@ecohaz.co.za" style="color:rgba(255,255,255,0.6); text-decoration:none; font-size:0.9rem; display:flex; align-items:flex-start; gap:0.6rem;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.6)'"><i class="fas fa-envelope" style="color:var(--orange); margin-top:0.15rem; flex-shrink:0;"></i>hello@ecohaz.co.za</a>
+          <div style="color:rgba(255,255,255,0.6); font-size:0.9rem; display:flex; align-items:flex-start; gap:0.6rem;"><i class="fas fa-map-marker-alt" style="color:var(--orange); margin-top:0.15rem; flex-shrink:0;"></i>Western Cape, Cape Town</div>
+          <div style="color:rgba(255,255,255,0.6); font-size:0.9rem; display:flex; align-items:center; gap:0.6rem;"><i class="fas fa-clock" style="color:var(--orange);"></i>Available 24/7 · 365 Days</div>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:1280px; margin:0 auto; padding:1.5rem 0; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
+      <p style="color:rgba(255,255,255,0.4); font-size:0.8rem;">&copy; 2026 EcoHaz Group. All rights reserved. Western Cape, Cape Town.</p>
+      <a href="faqs.html" style="color:var(--orange); text-decoration:none; font-size:0.8rem; font-weight:600;">FAQs</a>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() { const menu = document.getElementById('mobile-menu'); const icon = document.getElementById('menu-icon'); menu.classList.toggle('open'); icon.className = menu.classList.contains('open') ? 'fas fa-times' : 'fas fa-bars'; }
+    function handleResize() { const btn = document.getElementById('menu-btn'); const desktopNav = document.getElementById('desktop-nav'); const navCta = document.querySelector('nav > div > a.btn-orange'); if (window.innerWidth < 900) { btn.style.display='block'; desktopNav.style.display='none'; if(navCta) navCta.style.display='none'; } else { btn.style.display='none'; desktopNav.style.display='flex'; if(navCta) navCta.style.display='inline-flex'; document.getElementById('mobile-menu').classList.remove('open'); } }
+    window.addEventListener('resize', handleResize); handleResize();
+    function toggleAccordion(btn) {
+      const body = btn.nextElementSibling;
+      const isOpen = body.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.accordion-body').forEach(b => b.classList.remove('open'));
+      document.querySelectorAll('.accordion-btn').forEach(b => b.classList.remove('open'));
+      // Open this one if it was closed
+      if (!isOpen) { body.classList.add('open'); btn.classList.add('open'); }
+    }
+  </script>
+</body>
+</html>
