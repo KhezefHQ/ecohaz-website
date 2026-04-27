@@ -57,27 +57,38 @@
   <div style="background:var(--orange);">
     <div style="max-width:1280px; margin:0 auto; padding:0.5rem 1.5rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem;">
       <div style="display:flex; align-items:center; gap:1.5rem; color:white; font-size:0.8rem; font-family:'Montserrat',sans-serif; font-weight:600;">
-        <a href="tel:+27712345678" style="color:white; text-decoration:none; display:flex; align-items:center; gap:0.4rem;"><i class="fas fa-phone"></i> 071 234 5678</a>
-        <a href="mailto:hello@ecohaz.co.za" style="color:white; text-decoration:none; display:flex; align-items:center; gap:0.4rem;"><i class="fas fa-envelope"></i> hello@ecohaz.co.za</a>
+        <a href="tel:+27684103419" style="color:white; text-decoration:none; display:flex; align-items:center; gap:0.4rem;"><i class="fas fa-phone"></i> Call to Book</a>
+        <a href="mailto:hello@ecohazsolutions.co.za" style="color:white; text-decoration:none; display:flex; align-items:center; gap:0.4rem;"><i class="fas fa-envelope"></i> hello@ecohazsolutions.co.za</a>
         <span style="display:flex; align-items:center; gap:0.4rem;"><i class="fas fa-map-marker-alt"></i> Cape Town, Western Cape</span>
       </div>
-      <div style="color:white; font-size:0.8rem; font-family:'Montserrat',sans-serif; font-weight:600; display:flex; align-items:center; gap:0.4rem;"><i class="fas fa-clock"></i> Available 24/7 &bull; 365 Days a Year</div>
     </div>
   </div>
 
   <!-- NAV -->
   <nav style="background:var(--navy-dark); position:sticky; top:0; z-index:50; box-shadow:0 2px 24px rgba(0,0,0,0.3);">
-    <div style="max-width:1280px; margin:0 auto; padding:0 1.5rem; display:flex; align-items:center; justify-content:space-between; height:76px;">
-      <a href="index.html" style="display:flex; align-items:center; flex-shrink:0;"><img src="brand_asset/EcoHaz-removebg-preview.png" alt="EcoHaz" style="height:56px; width:auto;" /></a>
-      <div id="desktop-nav" style="display:flex; align-items:center; gap:2.25rem;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 1.5rem; display:flex; align-items:center; justify-content:space-between; height:92px; position:relative;">
+      <a href="index.html" style="display:flex; align-items:center; flex-shrink:0;"><img id="nav-logo" src="brand_asset/EcoHaz_main_logo.png" alt="EcoHaz" style="height:88px; width:auto;" /></a>
+      <div id="desktop-nav" style="position:absolute; left:50%; transform:translateX(-50%); display:flex; align-items:center; gap:2.25rem;">
         <a href="index.html" class="nav-link">Home</a>
         <a href="about.html" class="nav-link">About</a>
         <a href="services.html" class="nav-link">Services</a>
         <a href="locations.html" class="nav-link">Locations</a>
         <a href="contact.html" class="nav-link">Contact</a>
       </div>
-      <a href="https://wa.me/27712345678" target="_blank" class="btn-orange" style="font-size:0.78rem;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-      <button id="menu-btn" onclick="toggleMenu()" style="display:none; background:none; border:none; color:white; font-size:1.5rem; cursor:pointer; padding:0.5rem;"><i class="fas fa-bars" id="menu-icon"></i></button>
+      <div style="display:flex; align-items:center; gap:1.25rem; flex-shrink:0;">
+        <div id="nav-search-wrapper" style="position:relative;">
+          <button onclick="toggleNavSearch()" style="background:none; border:none; color:rgba(255,255,255,0.7); cursor:pointer; font-size:1.05rem; padding:0.4rem 0.5rem; transition:color 0.2s ease;" onmouseover="this.style.color='var(--orange)'" onmouseout="this.style.color='rgba(255,255,255,0.7)'" aria-label="Search site"><i class="fas fa-search"></i></button>
+          <div id="nav-search-panel" style="display:none; position:absolute; top:calc(100% + 0.75rem); right:0; width:300px; background:#0f1e2d; border:1px solid rgba(255,255,255,0.12); border-radius:8px; z-index:200; box-shadow:0 8px 32px rgba(0,0,0,0.5);">
+            <div style="padding:0.75rem; position:relative;">
+              <input id="nav-search-input" type="text" placeholder="Search pages…" style="width:100%; box-sizing:border-box; background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.12); border-radius:6px; padding:0.6rem 2.4rem 0.6rem 0.8rem; color:white; font-size:0.85rem; font-family:inherit; outline:none;" onfocus="this.style.borderColor='var(--orange)'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'" oninput="doNavSearch()" onkeydown="if(event.key==='Escape')document.getElementById('nav-search-panel').style.display='none'" />
+              <i class="fas fa-search" style="position:absolute; right:1.3rem; top:50%; transform:translateY(-50%); color:var(--orange); font-size:0.85rem; pointer-events:none;"></i>
+            </div>
+            <div id="nav-search-results"></div>
+          </div>
+        </div>
+        <a id="nav-whatsapp" href="https://wa.me/27684103419" target="_blank" class="btn-orange" style="font-size:0.78rem;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <button id="menu-btn" onclick="toggleMenu()" style="display:none; background:none; border:none; color:white; font-size:1.5rem; cursor:pointer; padding:0.5rem;"><i class="fas fa-bars" id="menu-icon"></i></button>
+      </div>
     </div>
     <div id="mobile-menu" class="mobile-menu-panel" style="background:var(--navy); border-top:1px solid rgba(255,255,255,0.1);">
       <div style="max-width:1280px; margin:0 auto; padding:1rem 1.5rem; display:flex; flex-direction:column; gap:1rem;">
@@ -86,7 +97,7 @@
         <a href="services.html" class="nav-link">Services</a>
         <a href="locations.html" class="nav-link">Locations</a>
         <a href="contact.html" class="nav-link">Contact</a>
-        <a href="tel:0712345678" class="btn-orange" style="justify-content:center; margin-top:0.5rem;"><i class="fas fa-phone"></i> 071 234 5678</a>
+        <a href="contact.html" class="btn-orange" style="justify-content:center; margin-top:0.5rem;">Book a Quote <i class="fas fa-arrow-right"></i></a>
       </div>
     </div>
   </nav>
@@ -224,7 +235,7 @@
           <span class="accordion-icon"><i class="fas fa-plus"></i></span>
         </button>
         <div class="accordion-body">
-          <div class="accordion-content">Simply call us on <a href="tel:0712345678" style="color:var(--orange); font-weight:700;">071 234 5678</a> or fill in the contact form on our <a href="contact.html" style="color:var(--orange); font-weight:700;">Contact page</a>. We do require an in-person consultation and walk-through before providing a quotation. This allows us to determine the level of hoard, assess exactly what your needs are, and give you an accurate quotation.</div>
+          <div class="accordion-content">Simply call us on <a href="tel:0684103419" style="color:var(--orange); font-weight:700;">068 410 3419</a> or fill in the contact form on our <a href="contact.html" style="color:var(--orange); font-weight:700;">Contact page</a>. We do require an in-person consultation and walk-through before providing a quotation. This allows us to determine the level of hoard, assess exactly what your needs are, and give you an accurate quotation.</div>
         </div>
       </div>
 
@@ -267,7 +278,7 @@
         <h3 style="font-family:'Montserrat',sans-serif; font-weight:800; color:var(--navy-dark); margin-bottom:0.5rem;">Still have questions?</h3>
         <p style="color:var(--slate); font-size:0.95rem; margin-bottom:1.5rem;">We're happy to chat, no pressure, no obligation, just a friendly conversation.</p>
         <div style="display:flex; flex-wrap:wrap; gap:1rem; justify-content:center;">
-          <a href="tel:0712345678" class="btn-orange"><i class="fas fa-phone"></i> Call Us</a>
+          <a href="tel:0684103419" class="btn-orange"><i class="fas fa-phone"></i> Call Us</a>
           <a href="contact.html" class="btn-navy">Send a Message <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
@@ -279,9 +290,9 @@
   <section class="grain-overlay" style="background:var(--orange); padding:5rem 1.5rem; position:relative; text-align:center;">
     <div style="max-width:800px; margin:0 auto; position:relative; z-index:2;">
       <h2 style="font-size:clamp(2rem,5vw,3.5rem); font-weight:900; color:white; letter-spacing:-0.03em; line-height:1.1; margin-bottom:1rem; text-transform:uppercase;">We Are Ready to Help</h2>
-      <p style="color:rgba(255,255,255,0.9); font-size:1.1rem; line-height:1.75; margin-bottom:2.5rem;">We're available 24/7, 365 days a year. Call or WhatsApp us to arrange for a quote.</p>
+      <p style="color:rgba(255,255,255,0.9); font-size:1.1rem; line-height:1.75; margin-bottom:2.5rem;">Call or WhatsApp us to arrange for a quote.</p>
       <div style="display:flex; flex-wrap:wrap; gap:1rem; justify-content:center;">
-        <a href="tel:0712345678" class="btn-navy" style="font-size:1rem; padding:1.1rem 2.5rem;"><i class="fas fa-phone"></i> 071 234 5678</a>
+        <a href="contact.html" class="btn-navy" style="font-size:1rem; padding:1.1rem 2.5rem;">Book a Quote <i class="fas fa-arrow-right"></i></a>
         <a href="contact.html" class="btn-outline-white" style="font-size:1rem; padding:1.1rem 2.5rem;">Contact Us <i class="fas fa-arrow-right"></i></a>
       </div>
     </div>
@@ -291,7 +302,7 @@
   <footer style="background:var(--navy-dark); color:white; padding:4rem 1.5rem 0;">
     <div style="max-width:1280px; margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr 1.5fr; gap:3rem; padding-bottom:3rem; border-bottom:1px solid rgba(255,255,255,0.1);">
       <div>
-        <img src="brand_asset/EcoHaz-removebg-preview.png" alt="EcoHaz" style="height:64px; margin-bottom:1rem;" />
+        <img src="brand_asset/EcoHaz_main_logo.png" alt="EcoHaz" style="height:85px; margin-bottom:1rem;" />
         <p style="color:rgba(255,255,255,0.6); font-size:0.9rem; line-height:1.75; max-width:280px; margin-bottom:1.5rem;">Western Cape's compassionate extreme cleaning specialists. We restore homes and environments, with kindness and understanding.</p>
         <div style="font-style:italic; color:var(--orange); font-family:'Montserrat',sans-serif; font-weight:700; font-size:0.9rem;">"We Clean with Compassion… and Precision"</div>
       </div>
@@ -319,23 +330,36 @@
       <div>
         <h4 style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; color:white; margin-bottom:1.25rem;">Contact Us</h4>
         <div style="display:flex; flex-direction:column; gap:0.9rem;">
-          <a href="tel:0712345678" style="color:rgba(255,255,255,0.6); text-decoration:none; font-size:0.9rem; display:flex; align-items:flex-start; gap:0.6rem;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.6)'"><i class="fas fa-phone" style="color:var(--orange); margin-top:0.15rem; flex-shrink:0;"></i>071 234 5678</a>
-          <a href="mailto:hello@ecohaz.co.za" style="color:rgba(255,255,255,0.6); text-decoration:none; font-size:0.9rem; display:flex; align-items:flex-start; gap:0.6rem;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.6)'"><i class="fas fa-envelope" style="color:var(--orange); margin-top:0.15rem; flex-shrink:0;"></i>hello@ecohaz.co.za</a>
+          <a href="tel:0684103419" style="color:rgba(255,255,255,0.6); text-decoration:none; font-size:0.9rem; display:flex; align-items:flex-start; gap:0.6rem;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.6)'"><i class="fas fa-phone" style="color:var(--orange); margin-top:0.15rem; flex-shrink:0;"></i>068 410 3419</a>
+          <a href="mailto:hello@ecohazsolutions.co.za" style="color:rgba(255,255,255,0.6); text-decoration:none; font-size:0.9rem; display:flex; align-items:flex-start; gap:0.6rem;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.6)'"><i class="fas fa-envelope" style="color:var(--orange); margin-top:0.15rem; flex-shrink:0;"></i>hello@ecohazsolutions.co.za</a>
           <div style="color:rgba(255,255,255,0.6); font-size:0.9rem; display:flex; align-items:flex-start; gap:0.6rem;"><i class="fas fa-map-marker-alt" style="color:var(--orange); margin-top:0.15rem; flex-shrink:0;"></i>Western Cape, Cape Town</div>
-          <div style="color:rgba(255,255,255,0.6); font-size:0.9rem; display:flex; align-items:center; gap:0.6rem;"><i class="fas fa-clock" style="color:var(--orange);"></i>Available 24/7 · 365 Days</div>
         </div>
       </div>
     </div>
     <div style="max-width:1280px; margin:0 auto; padding:1.5rem 0; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
-      <p style="color:rgba(255,255,255,0.4); font-size:0.8rem;">&copy; 2026 EcoHaz Group. All rights reserved. Western Cape, Cape Town.</p>
+      <p style="color:rgba(255,255,255,0.4); font-size:0.8rem;">&copy; <script>document.write(new Date().getFullYear())</script> EcoHaz Solutions (Pty) Ltd. All rights reserved.</p>
       <a href="faqs.html" style="color:var(--orange); text-decoration:none; font-size:0.8rem; font-weight:600;">FAQs</a>
     </div>
   </footer>
 
   <script>
     function toggleMenu() { const menu = document.getElementById('mobile-menu'); const icon = document.getElementById('menu-icon'); menu.classList.toggle('open'); icon.className = menu.classList.contains('open') ? 'fas fa-times' : 'fas fa-bars'; }
-    function handleResize() { const btn = document.getElementById('menu-btn'); const desktopNav = document.getElementById('desktop-nav'); const navCta = document.querySelector('nav > div > a.btn-orange'); if (window.innerWidth < 900) { btn.style.display='block'; desktopNav.style.display='none'; if(navCta) navCta.style.display='none'; } else { btn.style.display='none'; desktopNav.style.display='flex'; if(navCta) navCta.style.display='inline-flex'; document.getElementById('mobile-menu').classList.remove('open'); } }
+    function handleResize() { const btn=document.getElementById('menu-btn'),desktopNav=document.getElementById('desktop-nav'),sw=document.getElementById('nav-search-wrapper'),cta=document.getElementById('nav-whatsapp'),logo=document.getElementById('nav-logo'); if(window.innerWidth<900){btn.style.display='block';desktopNav.style.display='none';if(sw)sw.style.display='none';if(cta)cta.style.display='none';if(logo)logo.style.height='64px';}else{btn.style.display='none';desktopNav.style.display='flex';if(sw)sw.style.display='block';if(cta)cta.style.display='inline-flex';if(logo)logo.style.height='88px';document.getElementById('mobile-menu').classList.remove('open');} }
     window.addEventListener('resize', handleResize); handleResize();
+    // Nav search
+    (function(){
+      var navPages=[
+        {t:'Home',u:'index.html',k:'home welcome ecohaz cleaning'},
+        {t:'About Us',u:'about.html',k:'about us team story mission compassion'},
+        {t:'Services',u:'services.html',k:'services hoarding cleanup deep clean estate clearing commercial biohazard'},
+        {t:'Locations',u:'locations.html',k:'cape town areas bellville claremont sea point western cape'},
+        {t:'Contact Us',u:'contact.html',k:'contact quote call phone email get in touch'},
+        {t:'FAQs',u:'faqs.html',k:'faq questions answers cost price quotation process'},
+      ];
+      window.toggleNavSearch=function(){var p=document.getElementById('nav-search-panel');var open=p.style.display==='block';p.style.display=open?'none':'block';if(!open)setTimeout(function(){document.getElementById('nav-search-input').focus();},50);};
+      window.doNavSearch=function(){var q=document.getElementById('nav-search-input').value.trim().toLowerCase(),r=document.getElementById('nav-search-results');if(!q){r.innerHTML='';return;}var m=navPages.filter(function(p){return p.k.indexOf(q)>-1||p.t.toLowerCase().indexOf(q)>-1;});r.innerHTML=m.length?m.map(function(p){return'<a href="'+p.u+'" style="display:block;padding:0.6rem 1rem;color:rgba(255,255,255,0.85);text-decoration:none;font-size:0.85rem;border-top:1px solid rgba(255,255,255,0.07);" onmouseover="this.style.background=\'rgba(255,255,255,0.06)\'" onmouseout="this.style.background=\'\'">'+p.t+'</a>';}).join(''):'<div style="padding:0.65rem 1rem;color:rgba(255,255,255,0.4);font-size:0.85rem;">No results found</div>';};
+      document.addEventListener('click',function(e){var p=document.getElementById('nav-search-panel');if(p&&!e.target.closest('#nav-search-panel')&&!e.target.closest('[aria-label="Search site"]'))p.style.display='none';});
+    })();
     function toggleAccordion(btn) {
       const body = btn.nextElementSibling;
       const isOpen = body.classList.contains('open');
