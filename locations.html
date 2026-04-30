@@ -41,23 +41,35 @@
     .region-body { padding:1.75rem; }
     .suburb-tag { display:inline-block; background:var(--off-white); color:var(--navy); font-size:0.8rem; font-family:'Montserrat',sans-serif; font-weight:600; padding:0.35rem 0.75rem; border-radius:2px; margin:0.25rem; border:1px solid rgba(30,48,88,0.1); transition:background 0.2s ease, color 0.2s ease; }
     .suburb-tag:hover { background:var(--orange); color:white; border-color:var(--orange); }
+
+    /* =====================================================
+       MOBILE ONLY (≤ 768px) — laptop/desktop unchanged
+       ===================================================== */
+    @media (max-width: 768px) {
+      .mob-hide { display: none !important; }
+      .utility-bar-inner { justify-content: center !important; }
+      section { padding-top: 3rem !important; padding-bottom: 3rem !important; padding-left: 1rem !important; padding-right: 1rem !important; }
+      footer { padding-left: 1rem !important; padding-right: 1rem !important; }
+      .footer-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+      .m-stack { grid-template-columns: 1fr !important; gap: 2rem !important; }
+    }
   </style>
 </head>
 <body>
 
   <!-- ANNOUNCEMENT BAND -->
   <div style="background:var(--navy-dark); padding:0.4rem 1.5rem; text-align:center;">
-    <p style="color:rgba(255,255,255,0.9); font-size:0.78rem; font-family:'Montserrat',sans-serif; font-weight:600; margin:0; letter-spacing:0.02em;">Please note that EcoHaz Solutions is not currently accepting bookings for inspections and quotations. We apologise for any inconvenience.</p>
+    <p style="color:rgba(255,255,255,0.9); font-size:0.78rem; font-family:'Montserrat',sans-serif; font-weight:600; margin:0; letter-spacing:0.02em;">Thank you for your interest in EcoHaz Solutions. We are temporarily unavailable for inspection and quotation bookings at this time. Please check back soon for updates.</p>
   </div>
 
   <!-- UTILITY BAR -->
   <div style="background:var(--orange);">
-    <div style="max-width:1280px; margin:0 auto; padding:0.5rem 1.5rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem;">
+    <div class="utility-bar-inner" style="max-width:1280px; margin:0 auto; padding:0.5rem 1.5rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem;">
       <div style="display:flex; align-items:center; gap:1.5rem; color:white; font-size:0.8rem; font-family:'Montserrat',sans-serif; font-weight:600;">
         <a href="tel:+27684103419" style="color:white; text-decoration:none; display:flex; align-items:center; gap:0.4rem;"><i class="fas fa-phone"></i> 068 410 3419</a>
-        <a href="mailto:hello@ecohazsolutions.co.za" style="color:white; text-decoration:none; display:flex; align-items:center; gap:0.4rem;"><i class="fas fa-envelope"></i> hello@ecohazsolutions.co.za</a>
+        <a class="mob-hide" href="mailto:hello@ecohazsolutions.co.za" style="color:white; text-decoration:none; display:flex; align-items:center; gap:0.4rem;"><i class="fas fa-envelope"></i> hello@ecohazsolutions.co.za</a>
       </div>
-      <span style="color:white; font-size:0.8rem; font-family:'Montserrat',sans-serif; font-weight:600; display:flex; align-items:center; gap:0.4rem;"><i class="fas fa-map-marker-alt"></i> Cape Town, Western Cape</span>
+      <span class="mob-hide" style="color:white; font-size:0.8rem; font-family:'Montserrat',sans-serif; font-weight:600; display:flex; align-items:center; gap:0.4rem;"><i class="fas fa-map-marker-alt"></i> Cape Town, Western Cape</span>
     </div>
   </div>
 
@@ -112,7 +124,7 @@
   <!-- CAPE TOWN OVERVIEW -->
   <section style="padding:5rem 1.5rem; background:var(--off-white);">
     <div style="max-width:1280px; margin:0 auto;">
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; margin-bottom:4rem;">
+      <div class="m-stack" style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; margin-bottom:4rem;">
         <div>
           <span class="section-label">Based in Cape Town</span>
           <div class="orange-divider"></div>
@@ -318,7 +330,7 @@
 
   <!-- FOOTER -->
   <footer style="background:var(--navy-dark); color:white; padding:4rem 1.5rem 0;">
-    <div style="max-width:1280px; margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr 1.5fr; gap:3rem; padding-bottom:3rem; border-bottom:1px solid rgba(255,255,255,0.1);">
+    <div class="footer-grid" style="max-width:1280px; margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr 1.5fr; gap:3rem; padding-bottom:3rem; border-bottom:1px solid rgba(255,255,255,0.1);">
       <div>
         <img src="brand_asset/EcoHaz_main_logo.png" alt="EcoHaz" style="height:85px; margin-bottom:1rem;" />
         <p style="color:rgba(255,255,255,0.6); font-size:0.9rem; line-height:1.75; max-width:280px; margin-bottom:1.5rem;">Western Cape's compassionate extreme cleaning specialists. We restore homes and environments.</p>

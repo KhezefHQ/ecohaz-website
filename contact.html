@@ -43,23 +43,36 @@
     .contact-item { display:flex; align-items:flex-start; gap:1rem; padding:1.25rem; background:white; border-radius:4px; box-shadow:0 2px 8px rgba(15,29,54,0.06); transition:box-shadow 0.2s ease; }
     .contact-item:hover { box-shadow:0 4px 16px rgba(15,29,54,0.1); }
     .contact-icon { width:48px; height:48px; background:rgba(244,121,32,0.1); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--orange); font-size:1.1rem; flex-shrink:0; }
+
+    /* =====================================================
+       MOBILE ONLY (≤ 768px) — laptop/desktop unchanged
+       ===================================================== */
+    @media (max-width: 768px) {
+      .mob-hide { display: none !important; }
+      .utility-bar-inner { justify-content: center !important; }
+      section { padding-top: 3rem !important; padding-bottom: 3rem !important; padding-left: 1rem !important; padding-right: 1rem !important; }
+      footer { padding-left: 1rem !important; padding-right: 1rem !important; }
+      .footer-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+      .m-stack { grid-template-columns: 1fr !important; gap: 2rem !important; }
+      #form-name-grid { grid-template-columns: 1fr !important; }
+    }
   </style>
 </head>
 <body>
 
   <!-- ANNOUNCEMENT BAND -->
   <div style="background:var(--navy-dark); padding:0.4rem 1.5rem; text-align:center;">
-    <p style="color:rgba(255,255,255,0.9); font-size:0.78rem; font-family:'Montserrat',sans-serif; font-weight:600; margin:0; letter-spacing:0.02em;">Please note that EcoHaz Solutions is not currently accepting bookings for inspections and quotations. We apologise for any inconvenience.</p>
+    <p style="color:rgba(255,255,255,0.9); font-size:0.78rem; font-family:'Montserrat',sans-serif; font-weight:600; margin:0; letter-spacing:0.02em;">Thank you for your interest in EcoHaz Solutions. We are temporarily unavailable for inspection and quotation bookings at this time. Please check back soon for updates.</p>
   </div>
 
   <!-- UTILITY BAR -->
   <div style="background:var(--orange);">
-    <div style="max-width:1280px; margin:0 auto; padding:0.5rem 1.5rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem;">
+    <div class="utility-bar-inner" style="max-width:1280px; margin:0 auto; padding:0.5rem 1.5rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem;">
       <div style="display:flex; align-items:center; gap:1.5rem; color:white; font-size:0.8rem; font-family:'Montserrat',sans-serif; font-weight:600;">
         <a href="tel:+27684103419" style="color:white; text-decoration:none; display:flex; align-items:center; gap:0.4rem;"><i class="fas fa-phone"></i> 068 410 3419</a>
-        <a href="mailto:hello@ecohazsolutions.co.za" style="color:white; text-decoration:none; display:flex; align-items:center; gap:0.4rem;"><i class="fas fa-envelope"></i> hello@ecohazsolutions.co.za</a>
+        <a class="mob-hide" href="mailto:hello@ecohazsolutions.co.za" style="color:white; text-decoration:none; display:flex; align-items:center; gap:0.4rem;"><i class="fas fa-envelope"></i> hello@ecohazsolutions.co.za</a>
       </div>
-      <span style="color:white; font-size:0.8rem; font-family:'Montserrat',sans-serif; font-weight:600; display:flex; align-items:center; gap:0.4rem;"><i class="fas fa-map-marker-alt"></i> Cape Town, Western Cape</span>
+      <span class="mob-hide" style="color:white; font-size:0.8rem; font-family:'Montserrat',sans-serif; font-weight:600; display:flex; align-items:center; gap:0.4rem;"><i class="fas fa-map-marker-alt"></i> Cape Town, Western Cape</span>
     </div>
   </div>
 
@@ -113,7 +126,7 @@
 
   <!-- MAIN CONTACT SECTION -->
   <section style="padding:6rem 1.5rem; background:var(--off-white);">
-    <div style="max-width:1280px; margin:0 auto; display:grid; grid-template-columns:1fr 1.5fr; gap:4rem; align-items:start;">
+    <div class="m-stack" style="max-width:1280px; margin:0 auto; display:grid; grid-template-columns:1fr 1.5fr; gap:4rem; align-items:start;">
 
       <!-- Contact Info -->
       <div>
@@ -157,7 +170,7 @@
         <h3 style="font-size:1.5rem; font-weight:900; color:var(--navy-dark); letter-spacing:-0.02em; margin-bottom:0.5rem;">Send Us a Message</h3>
         <p style="color:var(--slate); font-size:0.9rem; margin-bottom:2rem; line-height:1.6;">Fill in the form below and we'll get back to you as soon as possible, usually within a few hours.</p>
         <form id="contact-form" onsubmit="handleSubmit(event)">
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin-bottom:1.25rem;">
+          <div id="form-name-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin-bottom:1.25rem;">
             <div>
               <label for="first-name">First Name *</label>
               <input type="text" id="first-name" class="form-input" placeholder="Your first name" required />
@@ -248,7 +261,7 @@
 
   <!-- FOOTER -->
   <footer style="background:var(--navy-dark); color:white; padding:4rem 1.5rem 0;">
-    <div style="max-width:1280px; margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr 1.5fr; gap:3rem; padding-bottom:3rem; border-bottom:1px solid rgba(255,255,255,0.1);">
+    <div class="footer-grid" style="max-width:1280px; margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr 1.5fr; gap:3rem; padding-bottom:3rem; border-bottom:1px solid rgba(255,255,255,0.1);">
       <div>
         <img src="brand_asset/EcoHaz_main_logo.png" alt="EcoHaz" style="height:85px; margin-bottom:1rem;" />
         <p style="color:rgba(255,255,255,0.6); font-size:0.9rem; line-height:1.75; max-width:280px; margin-bottom:1.5rem;">Western Cape's compassionate extreme cleaning specialists. We restore homes and environments.</p>

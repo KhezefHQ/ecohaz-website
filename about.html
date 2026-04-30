@@ -42,23 +42,37 @@
     .value-card:hover { transform:translateY(-4px); box-shadow:0 8px 32px rgba(15,29,54,0.12); }
     .grain-overlay { position:relative; }
     .grain-overlay::before { content:''; position:absolute; inset:0; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events:none; z-index:1; }
+
+    /* =====================================================
+       MOBILE ONLY (≤ 768px) — laptop/desktop unchanged
+       ===================================================== */
+    @media (max-width: 768px) {
+      .mob-hide { display: none !important; }
+      .utility-bar-inner { justify-content: center !important; }
+      section { padding-top: 3rem !important; padding-bottom: 3rem !important; padding-left: 1rem !important; padding-right: 1rem !important; }
+      footer { padding-left: 1rem !important; padding-right: 1rem !important; }
+      .footer-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+      .m-stack { grid-template-columns: 1fr !important; gap: 2rem !important; }
+      .story-hero-img { height: 260px !important; }
+      .hoarding-info-box { padding: 1.5rem !important; }
+    }
   </style>
 </head>
 <body>
 
   <!-- ANNOUNCEMENT BAND -->
   <div style="background:var(--navy-dark); padding:0.4rem 1.5rem; text-align:center;">
-    <p style="color:rgba(255,255,255,0.9); font-size:0.78rem; font-family:'Montserrat',sans-serif; font-weight:600; margin:0; letter-spacing:0.02em;">Please note that EcoHaz Solutions is not currently accepting bookings for inspections and quotations. We apologise for any inconvenience.</p>
+    <p style="color:rgba(255,255,255,0.9); font-size:0.78rem; font-family:'Montserrat',sans-serif; font-weight:600; margin:0; letter-spacing:0.02em;">Thank you for your interest in EcoHaz Solutions. We are temporarily unavailable for inspection and quotation bookings at this time. Please check back soon for updates.</p>
   </div>
 
   <!-- UTILITY BAR -->
   <div style="background:var(--orange);">
-    <div style="max-width:1280px; margin:0 auto; padding:0.5rem 1.5rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem;">
+    <div class="utility-bar-inner" style="max-width:1280px; margin:0 auto; padding:0.5rem 1.5rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem;">
       <div style="display:flex; align-items:center; gap:1.5rem; color:white; font-size:0.8rem; font-family:'Montserrat',sans-serif; font-weight:600;">
         <a href="tel:+27684103419" style="color:white; text-decoration:none; display:flex; align-items:center; gap:0.4rem;"><i class="fas fa-phone"></i> 068 410 3419</a>
-        <a href="mailto:hello@ecohazsolutions.co.za" style="color:white; text-decoration:none; display:flex; align-items:center; gap:0.4rem;"><i class="fas fa-envelope"></i> hello@ecohazsolutions.co.za</a>
+        <a class="mob-hide" href="mailto:hello@ecohazsolutions.co.za" style="color:white; text-decoration:none; display:flex; align-items:center; gap:0.4rem;"><i class="fas fa-envelope"></i> hello@ecohazsolutions.co.za</a>
       </div>
-      <span style="color:white; font-size:0.8rem; font-family:'Montserrat',sans-serif; font-weight:600; display:flex; align-items:center; gap:0.4rem;"><i class="fas fa-map-marker-alt"></i> Cape Town, Western Cape</span>
+      <span class="mob-hide" style="color:white; font-size:0.8rem; font-family:'Montserrat',sans-serif; font-weight:600; display:flex; align-items:center; gap:0.4rem;"><i class="fas fa-map-marker-alt"></i> Cape Town, Western Cape</span>
     </div>
   </div>
 
@@ -114,13 +128,13 @@
 
   <!-- STORY SPLIT -->
   <section style="padding:6rem 1.5rem; background:white;">
-    <div style="max-width:1280px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center;">
+    <div class="m-stack" style="max-width:1280px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center;">
       <div style="position:relative;">
         <div style="border-radius:4px; overflow:hidden; box-shadow:0 24px 64px rgba(15,29,54,0.18); position:relative;">
-          <img src="biohazard-cleanup-misconceptions.webp" alt="EcoHaz team" style="width:100%; height:500px; object-fit:cover; display:block;" />
+          <img src="biohazard-cleanup-misconceptions.webp" alt="EcoHaz team" class="story-hero-img" style="width:100%; height:500px; object-fit:cover; display:block;" />
           <div style="position:absolute; inset:0; background:linear-gradient(to bottom right, rgba(244,121,32,0.25), transparent); mix-blend-mode:multiply;"></div>
         </div>
-        <div style="position:absolute; top:-1.5rem; right:-1.5rem; background:var(--navy-dark); color:white; padding:1.5rem 1.75rem; border-radius:4px; box-shadow:0 8px 32px rgba(15,29,54,0.3); text-align:center;">
+        <div class="mob-hide" style="position:absolute; top:-1.5rem; right:-1.5rem; background:var(--navy-dark); color:white; padding:1.5rem 1.75rem; border-radius:4px; box-shadow:0 8px 32px rgba(15,29,54,0.3); text-align:center;">
           <div style="font-family:'Montserrat',sans-serif; font-weight:900; font-size:2rem; color:var(--orange);">WHY</div>
           <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:0.9rem; letter-spacing:0.05em;">ECOHAZ?</div>
         </div>
@@ -198,8 +212,8 @@
       </div>
 
       <!-- What is hoarding -->
-      <div style="background:white; border-radius:6px; padding:3rem; box-shadow:0 4px 24px rgba(15,29,54,0.08); margin-bottom:4rem; border-left:5px solid var(--orange);">
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start;">
+      <div class="hoarding-info-box" style="background:white; border-radius:6px; padding:3rem; box-shadow:0 4px 24px rgba(15,29,54,0.08); margin-bottom:4rem; border-left:5px solid var(--orange);">
+        <div class="m-stack" style="display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start;">
           <div>
             <h3 style="font-family:'Montserrat',sans-serif; font-weight:900; font-size:1.5rem; color:var(--navy-dark); letter-spacing:-0.02em; margin-bottom:1rem;">What Is Hoarding Disorder?</h3>
             <p style="color:var(--slate); line-height:1.85; font-size:0.95rem; margin-bottom:1rem;">
@@ -313,7 +327,7 @@
       <span class="section-label">Our Commitment</span>
       <div class="orange-divider" style="margin:0.75rem auto 1.25rem;"></div>
       <h2 style="font-size:clamp(2rem,4vw,3rem); font-weight:900; color:var(--navy-dark); letter-spacing:-0.03em; margin-bottom:2rem;">The EcoHaz Promise</h2>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:2rem; text-align:left; margin-bottom:3rem;">
+      <div class="m-stack" style="display:grid; grid-template-columns:1fr 1fr; gap:2rem; text-align:left; margin-bottom:3rem;">
         <div style="display:flex; gap:1rem; align-items:flex-start;">
           <i class="fas fa-check-circle" style="color:var(--orange); font-size:1.25rem; margin-top:0.15rem; flex-shrink:0;"></i>
           <div>
@@ -361,7 +375,7 @@
 
   <!-- FOOTER -->
   <footer style="background:var(--navy-dark); color:white; padding:4rem 1.5rem 0;">
-    <div style="max-width:1280px; margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr 1.5fr; gap:3rem; padding-bottom:3rem; border-bottom:1px solid rgba(255,255,255,0.1);">
+    <div class="footer-grid" style="max-width:1280px; margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr 1.5fr; gap:3rem; padding-bottom:3rem; border-bottom:1px solid rgba(255,255,255,0.1);">
       <div>
         <img src="brand_asset/EcoHaz_main_logo.png" alt="EcoHaz" style="height:85px; margin-bottom:1rem;" />
         <p style="color:rgba(255,255,255,0.6); font-size:0.9rem; line-height:1.75; max-width:280px; margin-bottom:1.5rem;">Western Cape's compassionate extreme cleaning specialists. We restore homes and environments.</p>

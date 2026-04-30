@@ -45,23 +45,37 @@
     .addon-card:hover { transform:translateY(-4px); box-shadow:0 8px 32px rgba(15,29,54,0.12); border-top-color:var(--orange); }
     .feat-icon { width:60px; height:60px; background:rgba(244,121,32,0.1); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--orange); font-size:1.4rem; }
     .coming-card { background:white; border-radius:4px; padding:1.75rem; box-shadow:0 2px 12px rgba(15,29,54,0.07); border:2px dashed rgba(99,123,141,0.3); opacity:0.85; }
+
+    /* =====================================================
+       MOBILE ONLY (≤ 768px) — laptop/desktop unchanged
+       ===================================================== */
+    @media (max-width: 768px) {
+      .mob-hide { display: none !important; }
+      .utility-bar-inner { justify-content: center !important; }
+      section { padding-top: 3rem !important; padding-bottom: 3rem !important; padding-left: 1rem !important; padding-right: 1rem !important; }
+      footer { padding-left: 1rem !important; padding-right: 1rem !important; }
+      .footer-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+      .m-stack { grid-template-columns: 1fr !important; gap: 2rem !important; }
+      .m-single-col { grid-template-columns: 1fr !important; }
+      .service-img { height: 240px !important; }
+    }
   </style>
 </head>
 <body>
 
   <!-- ANNOUNCEMENT BAND -->
   <div style="background:var(--navy-dark); padding:0.4rem 1.5rem; text-align:center;">
-    <p style="color:rgba(255,255,255,0.9); font-size:0.78rem; font-family:'Montserrat',sans-serif; font-weight:600; margin:0; letter-spacing:0.02em;">Please note that EcoHaz Solutions is not currently accepting bookings for inspections and quotations. We apologise for any inconvenience.</p>
+    <p style="color:rgba(255,255,255,0.9); font-size:0.78rem; font-family:'Montserrat',sans-serif; font-weight:600; margin:0; letter-spacing:0.02em;">Thank you for your interest in EcoHaz Solutions. We are temporarily unavailable for inspection and quotation bookings at this time. Please check back soon for updates.</p>
   </div>
 
   <!-- UTILITY BAR -->
   <div style="background:var(--orange);">
-    <div style="max-width:1280px; margin:0 auto; padding:0.5rem 1.5rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem;">
+    <div class="utility-bar-inner" style="max-width:1280px; margin:0 auto; padding:0.5rem 1.5rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem;">
       <div style="display:flex; align-items:center; gap:1.5rem; color:white; font-size:0.8rem; font-family:'Montserrat',sans-serif; font-weight:600;">
         <a href="tel:+27684103419" style="color:white; text-decoration:none; display:flex; align-items:center; gap:0.4rem;"><i class="fas fa-phone"></i> 068 410 3419</a>
-        <a href="mailto:hello@ecohazsolutions.co.za" style="color:white; text-decoration:none; display:flex; align-items:center; gap:0.4rem;"><i class="fas fa-envelope"></i> hello@ecohazsolutions.co.za</a>
+        <a class="mob-hide" href="mailto:hello@ecohazsolutions.co.za" style="color:white; text-decoration:none; display:flex; align-items:center; gap:0.4rem;"><i class="fas fa-envelope"></i> hello@ecohazsolutions.co.za</a>
       </div>
-      <span style="color:white; font-size:0.8rem; font-family:'Montserrat',sans-serif; font-weight:600; display:flex; align-items:center; gap:0.4rem;"><i class="fas fa-map-marker-alt"></i> Cape Town, Western Cape</span>
+      <span class="mob-hide" style="color:white; font-size:0.8rem; font-family:'Montserrat',sans-serif; font-weight:600; display:flex; align-items:center; gap:0.4rem;"><i class="fas fa-map-marker-alt"></i> Cape Town, Western Cape</span>
     </div>
   </div>
 
@@ -116,7 +130,7 @@
   <!-- ===== SERVICE 1: HOARDING ===== -->
   <section style="padding:6rem 1.5rem; background:white;" id="hoarding">
     <div style="max-width:1280px; margin:0 auto;">
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start;">
+      <div class="m-stack" style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start;">
         <div>
           <span class="section-label">Current Service</span>
           <div class="orange-divider"></div>
@@ -125,7 +139,7 @@
           <p style="color:var(--slate); line-height:1.8; margin-bottom:2rem; font-size:1rem;">We work entirely at your pace. Nothing is discarded without your consent. Our team is trained to handle this sensitive work with the utmost care and respect for you and your belongings.</p>
           <div style="margin-bottom:2rem;">
             <h3 style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--navy-dark); margin-bottom:1rem;">What's Included:</h3>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:0;">
+            <div class="m-single-col" style="display:grid; grid-template-columns:1fr 1fr; gap:0;">
               <div>
                 <div class="checklist-item"><i class="fas fa-check-circle" style="color:var(--orange); flex-shrink:0; margin-top:0.15rem;"></i><span style="color:var(--slate); font-size:0.95rem;">Sorting &amp; categorising items</span></div>
                 <div class="checklist-item"><i class="fas fa-check-circle" style="color:var(--orange); flex-shrink:0; margin-top:0.15rem;"></i><span style="color:var(--slate); font-size:0.95rem;">Packing &amp; responsible removal</span></div>
@@ -170,7 +184,7 @@
   <!-- ===== SERVICE 2: DEEP CLEANING ===== -->
   <section style="padding:6rem 1.5rem; background:var(--off-white);" id="deep-cleaning">
     <div style="max-width:1280px; margin:0 auto;">
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start;">
+      <div class="m-stack" style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start;">
         <div style="order:2;">
           <span class="section-label">Current Service</span>
           <div class="orange-divider"></div>
@@ -179,7 +193,7 @@
           <p style="color:var(--slate); line-height:1.8; margin-bottom:2rem; font-size:1rem;">Whether you need a full estate cleared, a newly built property cleaned before move-in, or ongoing commercial maintenance, EcoHaz delivers thorough, reliable results every time.</p>
           <div style="margin-bottom:2rem;">
             <h3 style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--navy-dark); margin-bottom:1rem;">What's Included:</h3>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:0;">
+            <div class="m-single-col" style="display:grid; grid-template-columns:1fr 1fr; gap:0;">
               <div>
                 <div class="checklist-item"><i class="fas fa-check-circle" style="color:var(--orange); flex-shrink:0; margin-top:0.15rem;"></i><span style="color:var(--slate); font-size:0.95rem;">Post-construction cleanup</span></div>
                 <div class="checklist-item"><i class="fas fa-check-circle" style="color:var(--orange); flex-shrink:0; margin-top:0.15rem;"></i><span style="color:var(--slate); font-size:0.95rem;">Estate clearing &amp; cleanout</span></div>
@@ -243,7 +257,7 @@
 
   <!-- FOOTER -->
   <footer style="background:var(--navy-dark); color:white; padding:4rem 1.5rem 0;">
-    <div style="max-width:1280px; margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr 1.5fr; gap:3rem; padding-bottom:3rem; border-bottom:1px solid rgba(255,255,255,0.1);">
+    <div class="footer-grid" style="max-width:1280px; margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr 1.5fr; gap:3rem; padding-bottom:3rem; border-bottom:1px solid rgba(255,255,255,0.1);">
       <div>
         <img src="brand_asset/EcoHaz_main_logo.png" alt="EcoHaz" style="height:85px; margin-bottom:1rem;" />
         <p style="color:rgba(255,255,255,0.6); font-size:0.9rem; line-height:1.75; max-width:280px; margin-bottom:1.5rem;">Western Cape's compassionate extreme cleaning specialists. We restore homes and environments.</p>
