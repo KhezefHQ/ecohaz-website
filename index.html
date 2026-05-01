@@ -256,6 +256,8 @@
       .stat-num { font-size: 1.75rem !important; }
       .trust-strip { flex-direction: column !important; align-items: center !important; gap: 1.25rem !important; }
       .trust-strip > div { justify-content: flex-start !important; width: 100%; max-width: 260px; }
+      .ann-desktop { display: none !important; }
+      .ann-mobile { display: block !important; }
     }
   </style>
 
@@ -273,7 +275,8 @@
 
   <!-- ANNOUNCEMENT BAND -->
   <div style="background:var(--navy-dark); padding:0.4rem 1.5rem; text-align:center;">
-    <p style="color:rgba(255,255,255,0.9); font-size:0.78rem; font-family:'Montserrat',sans-serif; font-weight:600; margin:0; letter-spacing:0.02em;">Thank you for your interest in EcoHaz Solutions. We are temporarily unavailable for inspection and quotation bookings at this time. Please check back soon for updates.</p>
+    <p class="ann-desktop" style="color:rgba(255,255,255,0.9); font-size:0.78rem; font-family:'Montserrat',sans-serif; font-weight:600; margin:0; letter-spacing:0.02em;">Thank you for your interest in EcoHaz Solutions. We are temporarily unavailable for inspection and quotation bookings at this time. Please check back soon for updates.</p>
+    <p class="ann-mobile" style="display:none; color:rgba(255,255,255,0.9); font-size:0.78rem; font-family:'Montserrat',sans-serif; font-weight:600; margin:0; letter-spacing:0.02em;">Please note that EcoHaz Solutions is not currently accepting bookings for inspections and quotations. We apologise for any inconvenience.</p>
   </div>
 
   <!-- ===== UTILITY BAR ===== -->
