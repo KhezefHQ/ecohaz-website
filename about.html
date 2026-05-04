@@ -34,6 +34,16 @@
     "priceRange": "$$"
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://www.ecohazsolutions.co.za/"},
+      {"@type":"ListItem","position":2,"name":"About","item":"https://www.ecohazsolutions.co.za/about.html"}
+    ]
+  }
+  </script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-EFTRECED1P"></script>
   <script>
@@ -43,6 +53,8 @@
     gtag('config', 'G-EFTRECED1P');
   </script>
   <link rel="icon" href="brand_asset/EcoHaz_mask-removebg-preview.png" type="image/png" />
+  <link rel="apple-touch-icon" href="brand_asset/EcoHaz_mask-removebg-preview.png" />
+  <meta name="theme-color" content="#0F1D36" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -98,16 +110,12 @@
       .hoarding-info-box { padding: 1.5rem !important; }
       .ann-desktop { display: none !important; }
       .ann-mobile { display: block !important; }
+      nav > div:first-child { height: 60px !important; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ANNOUNCEMENT BAND -->
-  <div style="background:var(--navy-dark); padding:0.4rem 1.5rem; text-align:center;">
-    <p class="ann-desktop" style="color:rgba(255,255,255,0.9); font-size:0.78rem; font-family:'Montserrat',sans-serif; font-weight:600; margin:0; letter-spacing:0.02em;">Thank you for your interest in EcoHaz Solutions. We are temporarily unavailable for inspection and quotation bookings at this time. Please check back soon for updates.</p>
-    <p class="ann-mobile" style="display:none; color:rgba(255,255,255,0.9); font-size:0.78rem; font-family:'Montserrat',sans-serif; font-weight:600; margin:0; letter-spacing:0.02em;">Please note that EcoHaz Solutions is not currently accepting bookings for inspections and quotations. We apologise for any inconvenience.</p>
-  </div>
 
   <!-- UTILITY BAR -->
   <div style="background:var(--orange);">
@@ -418,6 +426,9 @@
   </section>
 
   <!-- FOOTER -->
+  <div style="background:#0a1626; padding:0.55rem 1.5rem; text-align:center; border-top:1px solid rgba(255,255,255,0.06);">
+    <p style="color:rgba(255,255,255,0.5); font-size:0.72rem; font-family:'Montserrat',sans-serif; font-weight:600; margin:0; letter-spacing:0.03em;">EcoHaz is temporarily unavailable for bookings. Please check back soon.</p>
+  </div>
   <footer style="background:var(--navy-dark); color:white; padding:4rem 1.5rem 0;">
     <div class="footer-grid" style="max-width:1280px; margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr 1.5fr; gap:3rem; padding-bottom:3rem; border-bottom:1px solid rgba(255,255,255,0.1);">
       <div>
@@ -478,7 +489,7 @@
         btn.style.display='block'; desktopNav.style.display='none';
         if(searchWrapper) searchWrapper.style.display='none';
         if(navCta) navCta.style.display='none';
-        if(logo) logo.style.height='64px';
+        if(logo) logo.style.height='48px';
       } else {
         btn.style.display='none'; desktopNav.style.display='flex';
         if(searchWrapper) searchWrapper.style.display='block';
@@ -503,6 +514,13 @@
       window.doNavSearch=function(){var q=document.getElementById('nav-search-input').value.trim().toLowerCase(),r=document.getElementById('nav-search-results');if(!q){r.innerHTML='';return;}var m=navPages.filter(function(p){return p.k.indexOf(q)>-1||p.t.toLowerCase().indexOf(q)>-1;});r.innerHTML=m.length?m.map(function(p){return'<a href="'+p.u+'" style="display:block;padding:0.6rem 1rem;color:rgba(255,255,255,0.85);text-decoration:none;font-size:0.85rem;border-top:1px solid rgba(255,255,255,0.07);" onmouseover="this.style.background=\'rgba(255,255,255,0.06)\'" onmouseout="this.style.background=\'\'">'+p.t+'</a>';}).join(''):'<div style="padding:0.65rem 1rem;color:rgba(255,255,255,0.4);font-size:0.85rem;">No results found</div>';};
       document.addEventListener('click',function(e){var p=document.getElementById('nav-search-panel');if(p&&!e.target.closest('#nav-search-panel')&&!e.target.closest('[aria-label="Search site"]'))p.style.display='none';});
     })();
+  </script>
+  <button id="scroll-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="display:none; position:fixed; bottom:1.5rem; right:1.25rem; z-index:98; width:46px; height:46px; background:var(--orange); color:white; border:none; border-radius:50%; cursor:pointer; box-shadow:0 4px 16px rgba(244,121,32,0.4); font-size:1rem; align-items:center; justify-content:center; transition:background 0.2s ease, transform 0.15s cubic-bezier(0.34,1.56,0.64,1);"><i class="fas fa-chevron-up"></i></button>
+  <script>
+    window.addEventListener('scroll', function() {
+      var b = document.getElementById('scroll-top');
+      if (b) b.style.display = window.scrollY > 400 ? 'flex' : 'none';
+    });
   </script>
 </body>
 </html>

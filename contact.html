@@ -34,6 +34,16 @@
     "priceRange": "$$"
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://www.ecohazsolutions.co.za/"},
+      {"@type":"ListItem","position":2,"name":"Contact","item":"https://www.ecohazsolutions.co.za/contact.html"}
+    ]
+  }
+  </script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-EFTRECED1P"></script>
   <script>
@@ -43,6 +53,8 @@
     gtag('config', 'G-EFTRECED1P');
   </script>
   <link rel="icon" href="brand_asset/EcoHaz_mask-removebg-preview.png" type="image/png" />
+  <link rel="apple-touch-icon" href="brand_asset/EcoHaz_mask-removebg-preview.png" />
+  <meta name="theme-color" content="#0F1D36" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -98,6 +110,7 @@
       #form-name-grid { grid-template-columns: 1fr !important; }
       .ann-desktop { display: none !important; }
       .ann-mobile { display: block !important; }
+      nav > div:first-child { height: 60px !important; }
     }
   </style>
 </head>
@@ -348,7 +361,7 @@
 
   <script>
     function toggleMenu() { const menu = document.getElementById('mobile-menu'); const icon = document.getElementById('menu-icon'); menu.classList.toggle('open'); icon.className = menu.classList.contains('open') ? 'fas fa-times' : 'fas fa-bars'; }
-    function handleResize() { const btn=document.getElementById('menu-btn'),desktopNav=document.getElementById('desktop-nav'),sw=document.getElementById('nav-search-wrapper'),cta=document.getElementById('nav-whatsapp'),logo=document.getElementById('nav-logo'); if(window.innerWidth<900){btn.style.display='block';desktopNav.style.display='none';if(sw)sw.style.display='none';if(cta)cta.style.display='none';if(logo)logo.style.height='64px';}else{btn.style.display='none';desktopNav.style.display='flex';if(sw)sw.style.display='block';if(cta)cta.style.display='inline-flex';if(logo)logo.style.height='88px';document.getElementById('mobile-menu').classList.remove('open');} }
+    function handleResize() { const btn=document.getElementById('menu-btn'),desktopNav=document.getElementById('desktop-nav'),sw=document.getElementById('nav-search-wrapper'),cta=document.getElementById('nav-whatsapp'),logo=document.getElementById('nav-logo'); if(window.innerWidth<900){btn.style.display='block';desktopNav.style.display='none';if(sw)sw.style.display='none';if(cta)cta.style.display='none';if(logo)logo.style.height='48px';}else{btn.style.display='none';desktopNav.style.display='flex';if(sw)sw.style.display='block';if(cta)cta.style.display='inline-flex';if(logo)logo.style.height='88px';document.getElementById('mobile-menu').classList.remove('open');} }
     window.addEventListener('resize', handleResize); handleResize();
     // Nav search
     (function(){
