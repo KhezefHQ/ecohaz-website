@@ -52,3 +52,4 @@
 - Do not stop after one screenshot pass
 - Do not use `transition-all`
 - Do not use default Tailwind blue/indigo as primary color
+- **Never use an em dash (—) anywhere** — not in copy, meta descriptions, comments, or any other output. Use a comma, colon, or rewrite the sentence instead.
