@@ -47,7 +47,8 @@
 - **Depth:** Surfaces should have a layering system (base → elevated → floating), not all sit at the same z-plane.
 
 ## Project Identity
-- **If the user says the website name or domain has changed**, update the memory file immediately with the new name/domain and confirm the change. Never reference the old name again.
+- The user works on multiple client websites. Do not assume a website name or domain from context.
+- **Only update the remembered website name or domain if the user explicitly says it has changed.** When they do, update the memory file and confirm. Never reference the old name again.
 
 ## Hard Rules
 - Do not add sections, features, or content not in the reference
