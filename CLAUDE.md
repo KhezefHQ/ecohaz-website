@@ -46,6 +46,10 @@
 - **Spacing:** Use intentional, consistent spacing tokens — not random Tailwind steps.
 - **Depth:** Surfaces should have a layering system (base → elevated → floating), not all sit at the same z-plane.
 
+## Project Identity
+- **Live website:** ecohazsolutions.co.za
+- **If the user says the website name or domain has changed**, update this file immediately with the new name/domain, update the memory file at `memory/project_ecohaz.md`, and confirm the change. Never reference the old name again.
+
 ## Hard Rules
 - Do not add sections, features, or content not in the reference
 - Do not "improve" a reference design — match it
