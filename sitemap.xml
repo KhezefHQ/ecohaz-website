@@ -140,4 +140,29 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://www.ecohazsolutions.co.za/helpful-reads.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.ecohazsolutions.co.za/helpful-reads/5-levels-of-hoarding-disorder-explained.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.ecohazsolutions.co.za/helpful-reads/how-to-help-family-member-who-hoards.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.ecohazsolutions.co.za/helpful-reads/cape-town-rental-crisis-hoarding-connection.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.ecohazsolutions.co.za/helpful-reads/how-long-does-a-hoarding-clean-up-take.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
