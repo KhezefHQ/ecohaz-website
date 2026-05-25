@@ -11,7 +11,7 @@
   <meta property="og:title" content="Is Cape Town's Rental Crisis Making Hoarding Worse? | EcoHaz Solutions" />
   <meta property="og:description" content="Cape Town's rent is rising and long-term rentals are disappearing. Could the housing crisis be making hoarding worse for locals?" />
   <meta property="og:url" content="https://www.ecohazsolutions.co.za/helpful-reads/cape-town-rental-crisis-hoarding-connection.html" />
-  <meta property="og:image" content="https://www.ecohazsolutions.co.za/Hoarding_Image.jpg" />
+  <meta property="og:image" content="https://www.ecohazsolutions.co.za/1Hoarding_Image.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">
   {
@@ -41,7 +41,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" /><noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /></noscript>
   <style>
     :root { --orange:#F47920; --orange-dark:#D4630F; --orange-light:#F9A05A; --navy:#1E3058; --navy-mid:#2D4A82; --navy-dark:#0F1D36; --sky:#7DC8E3; --sky-light:#B3DFF0; --slate:#637B8D; --off-white:#F6F4F0; }
     * { box-sizing: border-box; }
@@ -75,6 +75,8 @@
       footer { padding-left: 1rem !important; padding-right: 1rem !important; }
       .footer-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
       nav > div:first-child { height: 60px !important; }
+      .article-layout { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+      .article-sidebar { position: static !important; top: auto !important; }
     }
   </style>
 </head>
@@ -125,7 +127,7 @@
     </div>
   </nav>
 
-  <section class="grain-overlay" style="background: linear-gradient(135deg, rgba(15,29,54,0.95) 0%, rgba(30,48,88,0.88) 100%), url('../Hoarding_Image.jpg') center/cover; padding:4rem 1.5rem 3rem; position:relative;">
+  <section class="grain-overlay" style="background: linear-gradient(135deg, rgba(15,29,54,0.95) 0%, rgba(30,48,88,0.88) 100%), url('../1Hoarding_Image.jpg') center/cover; padding:4rem 1.5rem 3rem; position:relative;">
     <div style="max-width:860px; margin:0 auto; position:relative; z-index:2;">
       <nav aria-label="Breadcrumb" style="margin-bottom:1.5rem;">
         <ol style="display:flex; align-items:center; gap:0.5rem; list-style:none; margin:0; padding:0; font-size:0.8rem; font-family:'Montserrat',sans-serif; font-weight:600; flex-wrap:wrap;">
@@ -143,7 +145,7 @@
   </section>
 
   <section style="background:white; padding:4rem 1.5rem;">
-    <div style="max-width:860px; margin:0 auto; display:grid; grid-template-columns:1fr 280px; gap:4rem; align-items:start;">
+    <div class="article-layout" style="max-width:860px; margin:0 auto; display:grid; grid-template-columns:1fr 280px; gap:4rem; align-items:start;">
 
       <article class="article-body">
         <p>Cape Town is officially one of the best cities in the world right now, according to the Telegraph, Time Out magazine and a steady stream of Instagram posts from people who have just discovered Camps Bay. Cape Town consistently ranks among the top cities in the world for quality of life. But that reputation is increasingly at odds with the experience of the people who actually live and work here year-round.</p>
@@ -195,7 +197,7 @@
         </div>
       </article>
 
-      <aside style="position:sticky; top:108px;">
+      <aside class="article-sidebar" style="position:sticky; top:108px;">
         <div style="background:var(--off-white); border-radius:4px; padding:1.75rem; margin-bottom:1.5rem; border-top:4px solid var(--orange);">
           <h3 style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:0.95rem; color:var(--navy-dark); margin:0 0 1rem;">Need Help Now?</h3>
           <p style="color:var(--slate); font-size:0.88rem; line-height:1.6; margin:0 0 1.25rem;">EcoHaz offers compassionate hoarding clean-up across Cape Town and the Western Cape. No judgement, no rush.</p>
@@ -218,7 +220,7 @@
   <footer style="background:var(--navy-dark); color:white; padding:4rem 1.5rem 0;">
     <div class="footer-grid" style="max-width:1280px; margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr 1.5fr; gap:3rem; padding-bottom:3rem; border-bottom:1px solid rgba(255,255,255,0.1);">
       <div>
-        <img src="../brand_asset/EcoHaz_main_logo.png" alt="EcoHaz" loading="lazy" style="height:85px; margin-bottom:1rem;" />
+        <img src="../brand_asset/EcoHaz_main_logo.png" alt="EcoHaz" loading="lazy" decoding="async" style="height:85px; margin-bottom:1rem;" />
         <p style="color:rgba(255,255,255,0.6); font-size:0.9rem; line-height:1.75; max-width:280px; margin-bottom:1.5rem;">Western Cape's extreme cleaning specialists. We restore homes and environments.</p>
         <div style="font-style:italic; color:var(--orange); font-family:'Montserrat',sans-serif; font-weight:700; font-size:0.9rem;">"We Clean with Compassion... and Precision"</div>
       </div>

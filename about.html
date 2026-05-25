@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -60,7 +60,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" /><noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /></noscript>
   <style>
     :root {
       --orange: #F47920; --orange-dark: #D4630F; --orange-light: #F9A05A;
@@ -189,7 +189,7 @@
     <div class="m-stack" style="max-width:1280px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center;">
       <div style="position:relative;">
         <div style="border-radius:4px; overflow:hidden; box-shadow:0 24px 64px rgba(15,29,54,0.18); position:relative;">
-          <img src="biohazard-cleanup-misconceptions.webp" alt="EcoHaz team" loading="lazy" class="story-hero-img" style="width:100%; height:500px; object-fit:cover; display:block;" />
+          <img src="biohazard-cleanup-misconceptions.webp" alt="EcoHaz team" loading="lazy" decoding="async" class="story-hero-img" style="width:100%; height:500px; object-fit:cover; display:block;" />
           <div style="position:absolute; inset:0; background:linear-gradient(to bottom right, rgba(244,121,32,0.25), transparent); mix-blend-mode:multiply;"></div>
         </div>
         <div class="mob-hide" style="position:absolute; top:-1.5rem; right:-1.5rem; background:var(--navy-dark); color:white; padding:1.5rem 1.75rem; border-radius:4px; box-shadow:0 8px 32px rgba(15,29,54,0.3); text-align:center;">
@@ -437,7 +437,7 @@
   <footer style="background:var(--navy-dark); color:white; padding:4rem 1.5rem 0;">
     <div class="footer-grid" style="max-width:1280px; margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr 1.5fr; gap:3rem; padding-bottom:3rem; border-bottom:1px solid rgba(255,255,255,0.1);">
       <div>
-        <img src="brand_asset/EcoHaz_main_logo.png" alt="EcoHaz" loading="lazy" style="height:85px; margin-bottom:1rem;" />
+        <img src="brand_asset/EcoHaz_main_logo.png" alt="EcoHaz" loading="lazy" decoding="async" style="height:85px; margin-bottom:1rem;" />
         <p style="color:rgba(255,255,255,0.6); font-size:0.9rem; line-height:1.75; max-width:280px; margin-bottom:1.5rem;">Western Cape's extreme cleaning specialists. We restore homes and environments.</p>
         <div style="font-style:italic; color:var(--orange); font-family:'Montserrat',sans-serif; font-weight:700; font-size:0.9rem;">"We Clean with Compassion… and Precision"</div>
       </div>

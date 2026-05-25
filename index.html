@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -45,13 +45,13 @@
   <link rel="icon" href="favicon.png" type="image/png" />
   <link rel="apple-touch-icon" href="favicon.png" />
   <meta name="theme-color" content="#0F1D36" />
-  <link rel="preload" as="image" href="Hoarding_Image.jpg" />
+  <link rel="preload" as="image" href="1Hoarding_Image.jpg" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" /><noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /></noscript>
   <style>
     :root {
       --orange: #F47920;
@@ -179,7 +179,7 @@
     .hero-section {
       background-image:
         linear-gradient(135deg, rgba(15,29,54,0.90) 0%, rgba(30,48,88,0.72) 60%, rgba(15,29,54,0.85) 100%),
-        url('Hoarding_Image.jpg');
+        url('1Hoarding_Image.jpg');
       background-size: cover;
       background-position: center 30%;
       background-attachment: scroll;
@@ -296,7 +296,7 @@
       .footer-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
       .m-stack { grid-template-columns: 1fr !important; gap: 2rem !important; }
       .hero-section > div { padding: 2rem 1rem 2.5rem !important; }
-      .hero-slogan { font-size: 0.85rem !important; }
+      .hero-slogan { font-size: 1rem !important; }
       .hero-section h1 { font-size: 3rem !important; }
       .stat-num { font-size: 1.75rem !important; }
       .trust-strip { flex-direction: column !important; align-items: center !important; gap: 1.25rem !important; }
@@ -465,7 +465,7 @@
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:1.75rem;">
         <!-- Hoarding Clean-up -->
         <a href="services.html" class="service-card">
-          <div class="service-card-img" style="background-image:url('Hoarding_Image.jpg');">
+          <div class="service-card-img" style="background-image:url('1Hoarding_Image.jpg');">
           </div>
           <div style="padding:1.75rem;">
             <div class="feat-icon" style="margin-bottom:1rem;">
@@ -556,7 +556,7 @@
       </div>
       <div style="position:relative;">
         <div style="border-radius:4px; overflow:hidden; box-shadow:0 24px 64px rgba(15,29,54,0.18); position:relative;">
-          <img src="Understanding-Hoarding-Psychological-and-Social-Perspectives.jpg" alt="Hoarding Clean-up" loading="lazy" style="width:100%; height:480px; object-fit:cover; display:block;" />
+          <img src="1Understanding-Hoarding-Psychological-and-Social-Perspectives1.jpg" alt="Hoarding Clean-up" loading="lazy" decoding="async" style="width:100%; height:480px; object-fit:cover; display:block;" />
           <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(15,29,54,0.5) 0%, transparent 50%);"></div>
         </div>
       </div>
@@ -662,7 +662,7 @@
     <div class="footer-grid" style="max-width:1280px; margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr 1.5fr; gap:3rem; padding-bottom:3rem; border-bottom:1px solid rgba(255,255,255,0.1);">
       <!-- Brand -->
       <div>
-        <img src="brand_asset/EcoHaz_main_logo.png" alt="EcoHaz" loading="lazy" style="height:85px; margin-bottom:1rem;" />
+        <img src="brand_asset/EcoHaz_main_logo.png" alt="EcoHaz" loading="lazy" decoding="async" style="height:85px; margin-bottom:1rem;" />
         <p style="color:rgba(255,255,255,0.6); font-size:0.9rem; line-height:1.75; max-width:280px; margin-bottom:1.5rem;">
           Western Cape's extreme cleaning specialists. We restore homes and environments.
         </p>

@@ -41,7 +41,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" /><noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /></noscript>
   <style>
     :root { --orange:#F47920; --orange-dark:#D4630F; --orange-light:#F9A05A; --navy:#1E3058; --navy-mid:#2D4A82; --navy-dark:#0F1D36; --sky:#7DC8E3; --sky-light:#B3DFF0; --slate:#637B8D; --off-white:#F6F4F0; }
     * { box-sizing: border-box; }
@@ -78,6 +78,8 @@
       footer { padding-left: 1rem !important; padding-right: 1rem !important; }
       .footer-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
       nav > div:first-child { height: 60px !important; }
+      .article-layout { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+      .article-sidebar { position: static !important; top: auto !important; }
     }
   </style>
 </head>
@@ -146,7 +148,7 @@
   </section>
 
   <section style="background:white; padding:4rem 1.5rem;">
-    <div style="max-width:860px; margin:0 auto; display:grid; grid-template-columns:1fr 280px; gap:4rem; align-items:start;">
+    <div class="article-layout" style="max-width:860px; margin:0 auto; display:grid; grid-template-columns:1fr 280px; gap:4rem; align-items:start;">
 
       <article class="article-body">
         <p>This is one of the first questions people ask when they reach out to us, and it is a completely fair one. Whether you are arranging a clean-up for yourself, a family member, an estate or a property you manage, knowing roughly how long the process will take helps you plan everything else around it.</p>
@@ -209,7 +211,7 @@
         </div>
       </article>
 
-      <aside style="position:sticky; top:108px;">
+      <aside class="article-sidebar" style="position:sticky; top:108px;">
         <div style="background:var(--off-white); border-radius:4px; padding:1.75rem; margin-bottom:1.5rem; border-top:4px solid var(--orange);">
           <h3 style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:0.95rem; color:var(--navy-dark); margin:0 0 1rem;">Need Help Now?</h3>
           <p style="color:var(--slate); font-size:0.88rem; line-height:1.6; margin:0 0 1.25rem;">EcoHaz offers compassionate hoarding clean-up across Cape Town and the Western Cape. No judgement, no rush.</p>
@@ -232,7 +234,7 @@
   <footer style="background:var(--navy-dark); color:white; padding:4rem 1.5rem 0;">
     <div class="footer-grid" style="max-width:1280px; margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr 1.5fr; gap:3rem; padding-bottom:3rem; border-bottom:1px solid rgba(255,255,255,0.1);">
       <div>
-        <img src="../brand_asset/EcoHaz_main_logo.png" alt="EcoHaz" loading="lazy" style="height:85px; margin-bottom:1rem;" />
+        <img src="../brand_asset/EcoHaz_main_logo.png" alt="EcoHaz" loading="lazy" decoding="async" style="height:85px; margin-bottom:1rem;" />
         <p style="color:rgba(255,255,255,0.6); font-size:0.9rem; line-height:1.75; max-width:280px; margin-bottom:1.5rem;">Western Cape's extreme cleaning specialists. We restore homes and environments.</p>
         <div style="font-style:italic; color:var(--orange); font-family:'Montserrat',sans-serif; font-weight:700; font-size:0.9rem;">"We Clean with Compassion... and Precision"</div>
       </div>
